@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style type="text/css">
+		body{margin: 0}
+		#left{width: 100vw; height: 80vh;
+			background: url(M.gif);
+			background-size:50vw auto;
+			animation: shift 2s infinite linear;}
+
+		@keyframes shift{
+			from{background-position: 0 0;}
+			to{background-position: -50vw 0;}
+		}
+		div{width:200px;height:200px;background:white;}
+		#button{width: 50px; height: 50px;}
+	</style>
+</head>
+<body style = "background-color: black;">
+<div id = "left"></div>
+	<button id="button">MOVE IT</button>
+	<script type="text/javascript">
+		const button = document.getElementById('button');
+		const left = document.getElementById('left');
+		let gifIndex = 1;
+
+		button.addEventListener('click', () => {
+			// GIF 이미지를 변경하고 계속해서 애니메이션을 유지
+			if (gifIndex === 1) {
+				left.style.backgroundImage = 'url(O.gif)';
+				gifIndex = 2;
+			} 
+			else {
+				left.style.backgroundImage = 'url(E.gif)';
+				gifIndex = 3;
+			}
+		});
+	</script>
+	
+</body>
+</html>
